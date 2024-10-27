@@ -1,4 +1,3 @@
-// customTheme.js
 import { extendTheme } from "@chakra-ui/react";
 import "@fontsource/poppins"; // Import Poppins font
 import "@fontsource/playfair-display"; 

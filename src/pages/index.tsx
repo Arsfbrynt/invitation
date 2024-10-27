@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
   const [isMobileViewOpen, setIsMobileViewOpen] = useState(false);
   const [isOpened, setIsOpened] = useState(false);
   const [audio, setAudio] = useState(new Audio(audioFiles["1.mp3"]));
-  const [isMobile] = useMediaQuery("(max-width: 768px)");
+  const [isMobile] = useMediaQuery<boolean>(["(max-width: 768px)"]);
   const [type, setType] = useState<string | null>(null);
   const [pause, setPause] = useState(false); 
   const [drawer, setDrawer] = useState(false);
