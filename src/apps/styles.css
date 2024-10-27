@@ -1,0 +1,78 @@
+.body {
+  animation: 3s ease-out 0s 1 FadeIn;
+}
+
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bounce {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes zoom {
+  100% {
+    transform: scale(1.2);
+  }
+}
+.bounce {
+  animation: bounce 6s infinite;
+}
+
+.zoom-bg {
+  animation: zoom 4.15s infinite;
+}
+
+.slick-dots {
+  position: relative !important;
+  min-height: 80px;
+}
+
+.slick-dots li {
+  min-width: 50px;
+  max-height: 200px;
+}
+
+.slick-dots li a img {
+  height: 64px;
+}
+
+.slick-slide img {
+  height: 500px;
+  margin: 0 auto;
+}
+
+.spin-icon {
+  animation: muter 10s infinite;
+}
+
+@keyframes muter {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s forwards; /* Adjust duration as needed */
+  opacity: 0; /* Initially hidden */
+}
