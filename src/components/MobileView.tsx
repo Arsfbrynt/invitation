@@ -18,7 +18,7 @@ const MobileView: React.FC<MobileViewProps> = ({ onOpenChange }) => {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setType(params.get("type"));
+    setType(params?.get("type"));
   }, []);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const MobileView: React.FC<MobileViewProps> = ({ onOpenChange }) => {
           letterSpacing="2px"
           textTransform="uppercase"
         >
-          {val.title}
+          {val?.title}
         </Heading>
 
         <Flex
@@ -86,7 +86,7 @@ const MobileView: React.FC<MobileViewProps> = ({ onOpenChange }) => {
             fontSize={36}
             fontFamily="headingAlternative"
           >
-            {name}
+            {name || '-'}
           </Text>
           <Text
             fontFamily="headingAlternative"
@@ -124,7 +124,7 @@ const MobileView: React.FC<MobileViewProps> = ({ onOpenChange }) => {
         zIndex={1}
       >
         <Slider {...settings}>
-          {val.images.map((image: any, index: number) => (
+          {val?.images.map((image: any, index: number) => (
             <div key={index}>
               <Box
                 width="500px"
@@ -159,7 +159,7 @@ const MobileView: React.FC<MobileViewProps> = ({ onOpenChange }) => {
             letterSpacing="2px"
             textTransform="uppercase"
           >
-            {val.title}
+            {val?.title}
           </Heading>
 
           <Flex
@@ -174,7 +174,7 @@ const MobileView: React.FC<MobileViewProps> = ({ onOpenChange }) => {
               fontSize={36}
               fontFamily="headingAlternative"
             >
-              {name}
+              {name || '-'}
             </Text>
             <Text
               fontFamily="headingAlternative"

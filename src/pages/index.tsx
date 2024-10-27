@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setType(params.get("type"));
+    setType(params?.get("type"));
   }, []);
 
   useEffect(() => {

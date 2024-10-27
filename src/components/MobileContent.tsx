@@ -12,7 +12,7 @@ const MobileContent: React.FC = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setType(params.get("type"));
+    setType(params?.get("type"));
   }, []);
 
   useEffect(() => {
@@ -30,10 +30,10 @@ const MobileContent: React.FC = () => {
 
   const settings = {
     customPaging: function (index: number) {
-      if (val && Array.isArray(val.images) && val.images[index]) {
+      if (val && Array.isArray(val?.images) && val?.images[index]) {
         return (
           <a>
-            <img src={val.images[index]} alt={`Image ${index + 1}`} />
+            <img src={val?.images[index]} alt={`Image ${index + 1}`} />
           </a>
         );
       }
@@ -71,7 +71,7 @@ const MobileContent: React.FC = () => {
             letterSpacing="2px"
             textTransform="uppercase"
           >
-            {val.opening}
+            {val?.opening}
           </Text>
         </Box>
         <Text
@@ -86,7 +86,7 @@ const MobileContent: React.FC = () => {
           whiteSpace="normal"
         >
           Welcome To <br />
-          {name}'s <br />
+          {name || '-'}'s <br />
           Wedding Website
         </Text>
         <Text
@@ -95,11 +95,11 @@ const MobileContent: React.FC = () => {
           fontStyle="italic"
           marginBottom={2}
         >
-          {val.content}
+          {val?.content}
         </Text>
         <Box paddingY={16} position="relative" zIndex={1}>
           <Slider {...settings}>
-            {val.images.map((image: any, index: number) => (
+            {val?.images.map((image: any, index: number) => (
               <div key={index}>
                 <img src={image} />
               </div>

@@ -9,7 +9,7 @@ const DesktopView: React.FC = () => {
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    setType(params.get("type"));
+    setType(params?.get("type"));
   }, []);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ const DesktopView: React.FC = () => {
           letterSpacing="2px"
           textTransform="uppercase" 
         >
-          {val.title}
+          {val?.title}
         </Heading>
         <Heading
           as="h2"
@@ -56,7 +56,7 @@ const DesktopView: React.FC = () => {
           fontSize="5rem"
           width="410px"
         >
-          {name}
+          {name || '-'}
         </Heading>
 
       <Text
@@ -66,7 +66,7 @@ const DesktopView: React.FC = () => {
         letterSpacing="1px"
         maxWidth="800px"
       >
-        {val.motto}
+        {val?.motto}
       </Text>
     </Box>
   ) : null;
